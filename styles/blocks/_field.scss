@@ -1,0 +1,63 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    align-items: start;
+
+    @include mobile {
+        row-gap: 10px;
+    }
+
+    &__label {
+        @include fluid-text(16, 14);
+    }
+
+    &__input {
+        width: 100%;
+        padding: 18px 30px;
+        border: var(--border);
+        border-radius: var(--border-radius);
+        
+        @include hover {
+            background-color: var(--color-accent);
+        }
+
+        @include mobile {
+            padding: 18px 20px;
+        }
+
+        &:focus {
+            border-color: var(--color-accent);
+            outline: none;
+        }
+
+        &::placeholder {
+            color: var(--color-gray-alt);
+        }
+
+        &--textarea {
+            min-height: 190px;
+            resize: vertical;
+
+            @include mobile {
+                height: 132px;
+            }
+        }
+
+        &--dark {
+            background-color: var(--color-dark-alt);
+            border-color: var(--color-light);
+            height: 67px;
+            color: var(--color-accent);
+
+            @include hover {
+                background-color: var(--color-dark);
+            }
+
+            &::placeholder {
+                color: var(--color-light);
+            }
+        }
+    }
+
+}
